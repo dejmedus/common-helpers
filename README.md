@@ -3,8 +3,10 @@
 Helper files to get tasks done quicker
 
 - Generate README.md *--readme*
+  - Creates a markdown file with links to major dependencies, basic local setup steps, and contributing info.
 
 ### Setup
+
 1. [Clone the repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository?tool=webui)
    
 ```shell
