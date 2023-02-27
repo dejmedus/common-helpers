@@ -2,7 +2,6 @@
 
 const readlinePromises = require('node:readline/promises');
 
-
 let command = process.argv[2]
 
 const helpMessage = [
