@@ -8,11 +8,11 @@ Helper files to get tasks done quicker
 1. [Clone the repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository?tool=webui)
    
 ```shell
-git clone https://github.com/dejmedus/common-helpers
+git clone https://github.com/dejmedus/common-helpers.git
 ```
 > ⚠️ The following assumes a MacOS/Linux system. Commands will differ slightly for Windows.
 
-1. Open .zshrc/.bashrc file
+2. Open .zshrc/.bashrc file
 
 ```shell
 open ~/.zshrc
