@@ -5,8 +5,6 @@ const { resolve } = require('node:path');
 
 const fs = require('fs')
 
-
-
 async function generate(repoName) {
     let filePath;
     let readmeDeps = [];
@@ -54,7 +52,6 @@ async function generate(repoName) {
 
         dependencies = [...new Set(dependencies)].filter(Boolean);
 
-
         // create readmeDeps
         for (let i = 0; i < dependencies.length; i++) {
             if (dependencyKeyList.includes(dependencies[i])) {
@@ -67,10 +64,7 @@ async function generate(repoName) {
         }
     }
 
-
     const filename = repoName.toLowerCase().trim().replace(" ", '-');
-
-
     const commandString = runCommand !== "" ? [
         `\n4. Run the app\n`,
         '```shell',
@@ -78,7 +72,7 @@ async function generate(repoName) {
         '```',
     ].join('\n') : "";
 
-    const depString = readmeDeps.length > 0 ? readmeDeps.shift('## Built with\n').join('\n') : "";
+    const depString = readmeDeps.length > 0 ? `\n## Built with\n\n${readmeDeps.join('\n')}\n` : "";
 
 
     try {
