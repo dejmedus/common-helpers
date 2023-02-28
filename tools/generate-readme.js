@@ -35,7 +35,7 @@ async function generate(repoName) {
 
                 // clean up dependency list
                 for (let i = 0; i < dependencies.length; i++) {
-                    dependencies[i] = dependencies[i].split("/")[0].replace("@", "")
+                    dependencies[i] = dependencies[i].split("/")[0].split("-")[0].replace("@", "");
                 }
             }
             else if (filePath.endsWith('.txt')) {
@@ -50,7 +50,7 @@ async function generate(repoName) {
 
         const dependencyKeyList = Object.keys(dependencyKey);
 
-        dependencies = [...new Set(dependencies)].filter(Boolean);
+        dependencies = [...new Set(dependencies)].filter(Boolean).reverse();
 
         // create readmeDeps
         for (let i = 0; i < dependencies.length; i++) {
@@ -72,7 +72,7 @@ async function generate(repoName) {
         '```',
     ].join('\n') : "";
 
-    const depString = readmeDeps.length > 0 ? `\n## Built with\n\n${readmeDeps.join('\n')}\n` : "";
+    const depString = readmeDeps.length > 0 ? `\n## Built with\n\n${readmeDeps.reverse().join('\n')}\n` : "";
 
 
     try {
@@ -114,7 +114,7 @@ async function generate(repoName) {
 
 module.exports.generate = generate;
 
-const hasRunCommands = ['react', 'next', 'Flask'];
+const hasRunCommands = ['react', 'next', 'Flask', 'tauri'];
 const dependencyKey = {
     python3: {
         name: 'Python 3',
@@ -143,6 +143,12 @@ const dependencyKey = {
         link: 'https://flask.palletsprojects.com/en/',
         desc: 'a python web framework',
         command: 'flask --debug run'
+    },
+    tauri: {
+        name: 'Tauri',
+        link: 'https://tauri.app/',
+        desc: 'an OS-agnostic app construction toolkit',
+        command: 'npm run tauri dev'
     },
     Jinja2: {
         name: 'Jinja',
