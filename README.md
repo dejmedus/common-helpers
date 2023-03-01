@@ -1,6 +1,6 @@
 ## Common Helpers 🐜
 
-Helper files to get tasks done quicker
+Helper scripts to get tasks done quicker
 
 ### Available Files
 
