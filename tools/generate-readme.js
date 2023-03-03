@@ -64,7 +64,7 @@ async function generate(repoName) {
         }
     }
 
-    const filename = repoName.toLowerCase().trim().replace(" ", '-');
+    const filename = repoName.toLowerCase().trim().replaceAll(" ", '-');
     const commandString = runCommand !== "" ? [
         `\n4. Run the app\n`,
         '```shell',
