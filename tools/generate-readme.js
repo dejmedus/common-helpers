@@ -31,7 +31,13 @@ async function generate(repoName) {
 
             if (filePath.endsWith('.json')) {
                 const packageFile = JSON.parse(contents);
-                dependencies = [...Object.keys(packageFile.dependencies), ...Object.keys(packageFile.devDependencies)];
+                if (packageFile["devDependencies"] !== undefined) {
+                    dependencies = [...Object.keys(packageFile.dependencies), ...Object.keys(packageFile.devDependencies)];
+                }
+                else {
+                    dependencies = Object.keys(packageFile.dependencies);
+                }
+
 
                 // clean up dependency list
                 for (let i = 0; i < dependencies.length; i++) {
