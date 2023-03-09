@@ -4,13 +4,18 @@ Helper scripts to get tasks done quicker
 
 ### Available Files
 
-Generate README.md *--readme*
+#### Generate README.md *--readme | -r*
+
 - Creates a markdown file with links to major dependencies, basic local setup steps, and contributing info.
   
 <details>
 <summary>View Example</summary>
 <img width="613" alt="generated-readme-example" src="https://user-images.githubusercontent.com/59973863/221714684-50537836-9cb0-4359-8b3a-74256da58f47.png">
 </details>
+
+#### Generate HTML Boilerplate *--boilerplate | -b*
+
+- Creates index.html, index.js, and styles.css files + an assets directory.
 
 ### Setup
 
@@ -48,4 +53,5 @@ source ~/.bashrc
 ```shell
 common --help
 common --readme
+common --boilerplate
 ```
