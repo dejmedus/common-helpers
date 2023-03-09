@@ -1,0 +1,8 @@
+:root {
+  --text: black;
+  --bg: rgb(252, 252, 252);
+}
+* {
+  margin: 0;
+  padding: 0;
+}

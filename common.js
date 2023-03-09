@@ -6,11 +6,13 @@ let command = process.argv[2]
 
 const helpMessage = [
     'Options:\n',
-    '  -r | --readme    Generate README.md\n',
-    '  -h | --help      Show help\n',
+    '  -r | --readme       Generate README.md\n',
+    '  -b | --boilerplate  Generate HTML boilerplate\n',
+    '  -h | --help         Show help\n',
     '\n',
     'Usage:\n',
     '  common --readme "project name"\n',
+    '  common --boilerplate\n',
     '  common --help\n',
 ].join("")
 
@@ -40,6 +42,10 @@ if (command != null) {
             const readme = require('./tools/generate-readme.js');
             readme.generate(repoName);
         })()
+    }
+    else if (command == "--boilerplate" || command == '-b') {
+        const boilerplate = require('./tools/boilerplate/boilerplate.js');
+        boilerplate.generate();
     }
     else {
         console.log("\nPlease use a valid command\n");
