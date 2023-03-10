@@ -8,11 +8,13 @@ const helpMessage = [
     'Options:\n',
     '  -r | --readme       Generate README.md\n',
     '  -b | --boilerplate  Generate HTML boilerplate\n',
+    '  -c | --convert      Convert px to rem\n',
     '  -h | --help         Show help\n',
     '\n',
     'Usage:\n',
     '  common --readme "project name"\n',
     '  common --boilerplate\n',
+    '  common --convert 64\n',
     '  common --help\n',
 ].join("")
 
@@ -46,6 +48,16 @@ if (command != null) {
     else if (command == "--boilerplate" || command == '-b') {
         const boilerplate = require('./tools/boilerplate/boilerplate.js');
         boilerplate.generate();
+    }
+    else if (command == "--convert" || command == '-c') {
+        let num = "";
+
+        if (process.argv[3] !== undefined) {
+            num = process.argv[3];
+        }
+
+        const rem = require('./tools/rem.js');
+        rem.convert(num);
     }
     else {
         console.log("\nPlease use a valid command\n");

@@ -4,6 +4,14 @@ Helper scripts to get tasks done quicker
 
 ### Available Files
 
+#### Generate HTML Boilerplate *--boilerplate | -b*
+
+- Creates index.html, index.js, and styles.css files + an assets directory.
+
+#### Convert px to rem *--convert | -c*
+
+- Provide a number in pixels to be converted to rem. If no number is provided, shows a px to rem conversion chart.
+
 #### Generate README.md *--readme | -r*
 
 - Creates a markdown file with links to major dependencies, basic local setup steps, and contributing info.
@@ -12,10 +20,6 @@ Helper scripts to get tasks done quicker
 <summary>View Example</summary>
 <img width="613" alt="generated-readme-example" src="https://user-images.githubusercontent.com/59973863/221714684-50537836-9cb0-4359-8b3a-74256da58f47.png">
 </details>
-
-#### Generate HTML Boilerplate *--boilerplate | -b*
-
-- Creates index.html, index.js, and styles.css files + an assets directory.
 
 ### Setup
 
@@ -52,6 +56,7 @@ source ~/.bashrc
 
 ```shell
 common --help
-common --readme
 common --boilerplate
+common --convert 64
+common --readme "Project Name"
 ```
