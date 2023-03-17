@@ -14,7 +14,7 @@ Helper scripts to get tasks done quicker
 
 #### Get lorem ipsum text *--lorem | -l*
 
-- Get lorem ipsum paragraphs.
+- Lorem ipsum paragraphs.
 
 #### Generate README.md *--readme | -r*
 
