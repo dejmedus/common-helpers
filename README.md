@@ -12,6 +12,10 @@ Helper scripts to get tasks done quicker
 
 - Provide a number in pixels to be converted to rem. If no number is provided, shows a px to rem conversion chart.
 
+#### Get lorem ipsum text *--lorem | -l*
+
+- Get lorem ipsum paragraphs.
+
 #### Generate README.md *--readme | -r*
 
 - Creates a markdown file with links to major dependencies, basic local setup steps, and contributing info.
@@ -55,8 +59,9 @@ source ~/.bashrc
 5. Call common
 
 ```shell
-common --help
 common --boilerplate
 common --convert 64
+common --help
+common --lorem 2
 common --readme "Project Name"
 ```
