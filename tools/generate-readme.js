@@ -147,8 +147,13 @@ const dependencyKey = {
     Flask: {
         name: 'Flask',
         link: 'https://flask.palletsprojects.com/en/',
-        desc: 'a python web framework',
+        desc: 'a Python web framework',
         command: 'flask --debug run'
+    },
+    pygame: {
+        name: 'pygame',
+        link: 'https://www.pygame.org/docs/?eventId=PyGames_5md2QsFEamGB',
+        desc: 'a set of Python modules for building video games',
     },
     tauri: {
         name: 'Tauri',
