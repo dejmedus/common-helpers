@@ -18,6 +18,9 @@ async function generate(repoName) {
         else if (fs.existsSync('./requirements.txt')) {
             filePath = resolve('./requirements.txt')
         }
+        else if (fs.existsSync('./Cargo.toml')) {
+            filePath = resolve('./Cargo.toml')
+        }
     }
     catch (err) {
         console.log("Error while searching for a dependency file", err);
@@ -27,7 +30,6 @@ async function generate(repoName) {
         let dependencies = [];
         try {
             const contents = await readFile(filePath, { encoding: 'utf8' });
-
 
             if (filePath.endsWith('.json')) {
                 const packageFile = JSON.parse(contents);
@@ -48,6 +50,13 @@ async function generate(repoName) {
                 contents.split('\n').forEach((dep, i) => {
                     dependencies[i] = dep.split("==")[0];
                 });
+            }
+            else if (filePath.endsWith('Cargo.toml')) {
+                const regex = /(.+)\s+=\s+{.+}/gm
+                const results = contents.matchAll(regex)
+                for (let result of results) {
+                    dependencies.push(result[1])
+                }
             }
 
         } catch (err) {
@@ -154,6 +163,11 @@ const dependencyKey = {
         name: 'pygame',
         link: 'https://www.pygame.org/docs/?eventId=PyGames_5md2QsFEamGB',
         desc: 'a set of Python modules for building video games',
+    },
+    yew: {
+        name: 'Yew',
+        link: 'https://yew.rs/',
+        desc: 'a framework for creating reliable and efficient web applications with Rust.',
     },
     tauri: {
         name: 'Tauri',
