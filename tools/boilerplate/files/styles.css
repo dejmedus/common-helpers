@@ -8,16 +8,16 @@
   text-decoration: none;
   list-style-type: none;
 }
-*,
 html {
   scroll-behavior: smooth !important;
 }
-html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -29,12 +29,12 @@ body {
 @media (min-width: 701px) and (max-width: 1120px) {
 }
 
+@media (prefers-reduced-motion) {
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --text: rgb(252, 252, 252);
     --bg: black;
   }
-}
-
-@media (prefers-reduced-motion) {
 }
