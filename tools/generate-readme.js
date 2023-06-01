@@ -81,7 +81,7 @@ async function generate(repoName) {
 
     const filename = repoName.toLowerCase().trim().replaceAll(" ", '-');
     const commandString = runCommand !== "" ? [
-        `\n4. Run the app\n`,
+        `\n5. Run the app\n`,
         '```shell',
         `${runCommand}`,
         '```',
@@ -91,27 +91,31 @@ async function generate(repoName) {
 
 
     try {
-        await writeFile(`./${filename}-README.md`, [
+        await writeFile(`./README-${filename}.md`, [
             `# ${repoName}`,
             `${depString}`,
-            '## Local Development Setup\n',
+            '## Local Setup\n',
             `1. [Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) ${filename}`,
             `2. [Create a local clone](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository) of the forked repository`,
             `3. Using the terminal, move into your local copy\n`,
             '```shell',
             `cd ${filename}`,
+            '```\n',
+            `4. Install dependencies\n`,
+            '```shell',
+            `npm i`,
             '```',
             `${commandString}`,
-            '## Contributing',
-            '1. Create a new branch',
+            '## Contributing\n',
+            '1. Create a new branch\n',
             '```shell',
             `git checkout -b 'your-branch-name'`,
-            '```',
+            '```\n',
             `2. Make changes.`,
-            `3. Push your branch to the upstream repo`,
+            `3. Push your branch to the upstream repo\n`,
             '```shell',
             `git push origin your-branch-name`,
-            '```',
+            '```\n',
             '🎉 Follow the link provided to create a pull request',
             '\n',
             '## Screenshots'
